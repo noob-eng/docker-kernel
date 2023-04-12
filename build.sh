@@ -39,8 +39,8 @@ echo
 echo "Moving to kernel dir"
 echo
 
-cp surya-docker_defconfig kernel/arch/arm64/configs/
-
+#cp surya-docker_defconfig kernel/arch/arm64/configs/
+cp silont_defconfig kernel/arch/arm64/configs/
 cd kernel
 echo $PWD
 
@@ -59,7 +59,8 @@ mkdir -p out
 echo
 echo "Set DEFCONFIG"
 echo 
-make CC=clang O=out surya-docker_defconfig
+#make CC=clang O=out surya-docker_defconfig
+make CC=clang O=out silont_defconfig
 
 echo
 echo "Build The Good Stuff"
