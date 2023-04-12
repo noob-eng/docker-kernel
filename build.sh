@@ -26,7 +26,7 @@ mkdir -p out
 export ZIPNAME=Surya-Kernel.zip
 export ARCH=arm64
 export SUBARCH=arm64
-export CLANG_PATH=/home/runner/work/Kernel-Actions/Kernel-Actions/clang/bin
+export CLANG_PATH=/home/runner/work/docker-kernel/docker-kernel/clang/bin
 PATH=/usr/lib/ccache:${PATH}
 export PATH=${CLANG_PATH}:${PATH}
 export CLANG_TRIPLE=aarch64-linux-gnu-
