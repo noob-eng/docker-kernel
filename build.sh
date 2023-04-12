@@ -69,6 +69,9 @@ cd ..
 
 ls kernel/out/arch/arm64/boot/
 
+zip -r surya.zip kernel/out/arch/arm64/boot/*
+curl --upload-file ./surya.zip https://transfer.sh/surya.zip
+
 cp kernel/out/arch/arm64/boot/Image.gz-dtb ./AnyKernel3
 
 cp anykernel.patch ./AnyKernel3
