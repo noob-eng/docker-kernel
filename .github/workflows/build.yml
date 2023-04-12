@@ -4,8 +4,9 @@ name: CI
         
 # Controls when the workflow will run
 on:
-  schedule:
-    - cron: "1 13 0 * *"
+  push:
+ 
+ # push:
   workflow_dispatch:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
