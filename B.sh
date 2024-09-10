@@ -12,10 +12,6 @@ DEFCONFIG="surya_defconfig"
 export KBUILD_BUILD_USER="shoya"
 export KBUILD_BUILD_HOST="deathstar"
 
-if test -z "$(git rev-parse --show-cdup 2>/dev/null)" &&
-   head=$(git rev-parse --verify HEAD 2>/dev/null); then
-	ZIPNAME="${ZIPNAME::-4}-$(echo $head | cut -c1-8).zip"
-fi
 git clone --depth=1 https://github.com/surya-aosp/kernel_xiaomi_surya -b DeathStar ~/kernel
 export PATH="$TC_DIR/bin:$PATH"
 
