@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v2
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: sh ./build.sh
+        run: sh ./B.sh
       - uses: actions/upload-artifact@v2
         with:
           name: Image.gz
