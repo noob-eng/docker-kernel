@@ -5,8 +5,8 @@
 
 SECONDS=0 # builtin bash timer
 ZIPNAME="DeathStar+-surya-$(date '+%Y%m%d-%H%M').zip"
-TC_DIR="$(pwd)/tc/clang-neutron"
-AK3_DIR="$(pwd)/android/AnyKernel3"
+TC_DIR="~/tc/clang-neutron"
+AK3_DIR="~/AnyKernel3"
 DEFCONFIG="surya_defconfig"
 
 export KBUILD_BUILD_USER="shoya"
@@ -16,7 +16,7 @@ if test -z "$(git rev-parse --show-cdup 2>/dev/null)" &&
    head=$(git rev-parse --verify HEAD 2>/dev/null); then
 	ZIPNAME="${ZIPNAME::-4}-$(echo $head | cut -c1-8).zip"
 fi
-
+git clone --depth=1 https://github.com/surya-aosp/kernel_xiaomi_surya -b DeathStar ~/kernel
 export PATH="$TC_DIR/bin:$PATH"
 
 if ! [ -d "$TC_DIR" ]; then
@@ -51,7 +51,7 @@ fi
 if [[ $1 = "-c" || $1 = "--clean" ]]; then
 	rm -rf out
 fi
-
+cd ~/kernel
 mkdir -p out
 make O=out ARCH=arm64 $DEFCONFIG
 
