@@ -24,9 +24,9 @@ jobs:
         run: sh ./build.sh
       - uses: actions/upload-artifact@v2
         with:
-          name: Image.gz-dtb
+          name: Image.gz
           path: | 
-            ./kernel/out/arch/arm64/boot/Image.gz-dtb
+            ./kernel/out/arch/arm64/boot/Image.gz
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
